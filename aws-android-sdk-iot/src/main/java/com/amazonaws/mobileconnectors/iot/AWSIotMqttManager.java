@@ -600,11 +600,19 @@ public class AWSIotMqttManager {
     }
 
     /**
-     * Sets the MQTT client.  Used for unit tests.
+     * Sets the MQTT client.  Used for custom MqttAsyncClient.
      * @param client - desired MQTT client.
      */
-    void setMqttClient(MqttAsyncClient client) {
+    public void setMqttClient(MqttAsyncClient client) {
         mqttClient = client;
+    }
+
+    /**
+     * Gets the MQTT client.  Used for custom set MqttAsyncClient.
+     * @return MQTT client.
+     */
+    public MqttAsyncClient getMqttClient() {
+       return mqttClient ;
     }
 
     /**

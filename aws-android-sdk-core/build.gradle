@@ -1,4 +1,4 @@
-apply from: rootProject.file('publishing.gradle')
+//apply from: rootProject.file('publishing.gradle')
 apply plugin: 'com.android.library'
 
 android {
@@ -10,11 +10,18 @@ android {
 
         consumerProguardFiles 'consumer-proguard-rules.pro'
     }
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+            // 使用 project.name 动态获取库名
+            outputFileName = "${project.name}-xp-${variant.buildType.name}-${VERSION_NAME}.aar"
+        }
+    }
 }
 
 dependencies {
     api 'com.google.code.gson:gson:2.8.9'
-    implementation 'androidx.annotation:annotation:1.1.0'
+    //    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation("com.android.support:appcompat-v7:27.1.0")
 
     testImplementation 'joda-time:joda-time:2.8.1'
     testImplementation 'junit:junit:4.13.1'

@@ -1,4 +1,4 @@
-apply from: rootProject.file('publishing.gradle')
+//apply from: rootProject.file('publishing.gradle')
 apply plugin: 'com.android.library'
 
 android {
@@ -8,10 +8,16 @@ android {
         minSdkVersion 9
         targetSdkVersion 29
     }
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+            // 使用 project.name 动态获取库名
+            outputFileName = "${project.name}-xp-${variant.buildType.name}-${VERSION_NAME}.aar"
+        }
+    }
 }
 
 dependencies {
-    api (project(':aws-android-sdk-core')) {
+    api(project(':aws-android-sdk-core')) {
         exclude group: 'com.google.android', module: 'android'
     }
     implementation 'org.conscrypt:conscrypt-android:2.5.1'

@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:1-7:12
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:1-7:12
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:1-7:12
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:1-7:12
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:1-7:12
+	package
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:3:11-34
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:1-7:12
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:4:5-6:19
+uses-library#org.apache.http.legacy
+ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:5:9-88
+	android:required
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:5:61-85
+	android:name
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml:5:23-60
+uses-sdk
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+		ADDED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
+		INJECTED from /Users/wangxuejie/AndroidStudioProjects/XP/aws-sdk-android-jay/aws-sdk-android/aws-android-sdk-core/src/main/AndroidManifest.xml
