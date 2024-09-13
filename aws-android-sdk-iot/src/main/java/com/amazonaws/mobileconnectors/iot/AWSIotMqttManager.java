@@ -25,12 +25,11 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.http.TLS12SocketFactory;
+import com.amazonaws.logging.Log;
+import com.amazonaws.logging.LogFactory;
 import com.amazonaws.regions.Region;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.VersionInfoUtils;
-
-import com.amazonaws.logging.Log;
-import com.amazonaws.logging.LogFactory;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -40,6 +39,7 @@ import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.MqttPingSender;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.security.KeyManagementException;
@@ -49,10 +49,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.UnrecoverableKeyException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.Map;
 
 import javax.net.SocketFactory;
 
@@ -259,6 +259,11 @@ public class AWSIotMqttManager {
 
     /** Override value for System.currentTimeInMillis.  Used for unit testing reconnect logic. */
     private Long unitTestMillisOverride;
+
+    /**
+     * Custom MqttPingSender by user
+     */
+    private MqttPingSender pingSender;
 
     /**
      * @deprecated Since 2.13.2 this method will be removed in the next minor version.
@@ -878,6 +883,15 @@ public class AWSIotMqttManager {
     }
 
     /**
+     * Set Custom {@link MqttPingSender} implementation
+     *
+     * @param pingSender Custom {@link MqttPingSender} implementation.
+     */
+    public void setMqttPingSender(MqttPingSender pingSender) {
+        this.pingSender = pingSender;
+    }
+
+    /**
      * Initializes the MQTT session and connects to the specified MQTT server
      * using certificate and private key in keystore on the specified port.
      *
@@ -923,7 +937,11 @@ public class AWSIotMqttManager {
 
         try {
             if (mqttClient == null) {
-                mqttClient = new MqttAsyncClient(mqttBrokerURL, mqttClientId, new MemoryPersistence());
+                if (pingSender == null) {
+                    mqttClient = new MqttAsyncClient(mqttBrokerURL, mqttClientId, new MemoryPersistence());
+                } else {
+                    mqttClient = new MqttAsyncClient(mqttBrokerURL, mqttClientId, new MemoryPersistence(), pingSender);
+                }
             }
 
             final SocketFactory socketFactory = (proxyHost != null) ?
